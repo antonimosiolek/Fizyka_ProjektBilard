@@ -122,4 +122,4 @@ Model stanowi uproszczenie rzeczywistej gry w bilard i nie uwzględnia:
 
 **Antoni Mosiołek**
 
-Projekt wykonany w ramach zajęć z fizyki jako demonstracja zastosowania metod numerycznych w modelowaniu układów dynamicznych.
+Projekt wykonany w ramach zajęć z fizyki jako symulacja zachowań bil i ich wrażliwośći na warunki początkowe.
