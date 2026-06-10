@@ -23,7 +23,7 @@ CLOCK = pygame.time.Clock()
 # ─────────────────────────────────────────────
 #  Stałe fizyczne
 #   Jednostki "wewnętrzne": piksele i sekundy
-#   SCALE = 200 px / 1 m  ->  G·SCALE = przyspieszenie tarcia [px/s²]
+#   SCALE = 200 px / 1 m  →  G·SCALE = przyspieszenie tarcia [px/s²]
 # ─────────────────────────────────────────────
 G      = 9.81   # m/s²
 MU     = 0.1   # współczynnik tarcia kinetycznego (bezwymiarowy)
@@ -58,8 +58,9 @@ BLUE       = ( 60, 110, 230)
 LIGHT_BLUE = (120, 170, 255)
 
 
-
-# rysowanie zaokrąglonego prostokąta
+# ─────────────────────────────────────────────
+#  Pomocnik: rysowanie zaokrąglonego prostokąta
+# ─────────────────────────────────────────────
 def draw_rounded_rect(surf, color, rect, r=8, width=0):
     pygame.draw.rect(surf, color, rect, width, border_radius=r)
 
@@ -132,6 +133,7 @@ class Ball:
         cx, cy = int(self.x), int(self.y)
         if ghost:
             pygame.draw.circle(surf, self.color, (cx, cy), self.r, 3)
+            # refleks
             pygame.draw.circle(surf, WHITE, (cx - 4, cy - 4), 3)
         else:
             pygame.draw.circle(surf, self.color, (cx, cy), self.r)
@@ -237,8 +239,13 @@ class BilliardSystem:
                     b2.x += nx * overlap * 0.5
                     b2.y += ny * overlap * 0.5
 
-
-
+                    # Δv wzdłuż normalnej: p = (v1−v2)·n
+                    v_rel_n = (b1.vx - b2.vx) * nx + (b1.vy - b2.vy) * ny
+                    if v_rel_n > 0:  # bile zbliżają się (warunek konieczny)
+                        b1.vx -= v_rel_n * nx; b1.vy -= v_rel_n * ny
+                        b2.vx += v_rel_n * nx;  b2.vy += v_rel_n * ny
+                        b1.moving = True
+                        b2.moving = True
 
     def draw(self, surf, ghost=False):
         for b in self.balls:
@@ -383,7 +390,7 @@ def draw_topbar(surf, angle_deg: float):
         ("  |  ",                   GRAY),
         ("Zderzenia sprężyste",     LIGHT_RED),
         ("  |  ",                   GRAY),
-        (f"Tarcie kinetyczne µ= {MU} ",LIGHT_BLUE),
+        (f"Tarcie kinetyczne µ={MU}",LIGHT_BLUE),
         ("  |  ",                   GRAY),
         (f"Δθ = {angle_deg:.4f}°",  YELLOW),
     ]
@@ -435,7 +442,7 @@ while running:
                 sA = BilliardSystem(0.0,          "A")
                 sB = BilliardSystem(angle_offset,  "B")
 
-
+    # ── Fizyka ──
     if not paused:
         sA.update()
         sB.update()
@@ -454,4 +461,4 @@ while running:
     CLOCK.tick(60)
 
 pygame.quit()
-sys.exit()
+sys.exit()()
