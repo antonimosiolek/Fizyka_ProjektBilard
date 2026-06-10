@@ -30,25 +30,6 @@ Przyjęto następujące założenia:
 * odbicia od band traktowane są jako sprężyste zderzenia ze ścianami,
 * uwzględniono tarcie kinetyczne,
 * symulacja prowadzona jest w dyskretnych krokach czasowych.
-
-### Równania ruchu
-
-Ruch bil opisano za pomocą II zasady dynamiki Newtona
-
-[
-m\frac{d\vec v}{dt}=\vec F.
-]
-
-Do całkowania numerycznego wykorzystano półjawny schemat Eulera:
-
-[
-\vec v^{n+1}=\vec v^n+\vec a^n\Delta t,
-]
-
-[
-\vec r^{n+1}=\vec r^n+\vec v^{n+1}\Delta t.
-]
-
 ---
 
 ## Efekt motyla
@@ -66,14 +47,6 @@ Stanowi to jakościową demonstrację **chaosu deterministycznego** i czułości
 
 ## Struktura projektu
 
-```text
-.
-├── main.py        # główny plik programu
-└── README.md
-```
-
-Najważniejsze elementy implementacji:
-
 | Element          | Opis                                       |
 | ---------------- | ------------------------------------------ |
 | `Ball`           | reprezentuje pojedynczą bilę               |
@@ -83,29 +56,10 @@ Najważniejsze elementy implementacji:
 | `draw_panel()`   | panel informacyjny z parametrami symulacji |
 
 ---
-
-## Instalacja
-
 ### Wymagania
 
 * Python 3.10 lub nowszy,
 * biblioteka `pygame`.
-
-### Instalacja zależności
-
-```bash
-pip install pygame
-```
-
----
-
-## Uruchomienie
-
-```bash
-python main.py
-```
-
----
 
 ## Sterowanie
 
@@ -119,14 +73,13 @@ python main.py
 | `ESC`    | zakończenie programu                       |
 
 ---
-
 ## Parametry symulacji
 
 Domyślne wartości:
 
 ```python
 G = 9.81
-MU = 0.15
+MU = 0.1
 SCALE = 200
 DT = 0.005
 STOP_V = 1.5
