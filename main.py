@@ -58,9 +58,8 @@ BLUE       = ( 60, 110, 230)
 LIGHT_BLUE = (120, 170, 255)
 
 
-# ─────────────────────────────────────────────
-#  Pomocnik: rysowanie zaokrąglonego prostokąta
-# ─────────────────────────────────────────────
+
+#  rysowanie zaokrąglonego prostokąta
 def draw_rounded_rect(surf, color, rect, r=8, width=0):
     pygame.draw.rect(surf, color, rect, width, border_radius=r)
 
