@@ -1,6 +1,6 @@
 # 🎱 Billiard Chaos Simulation
 
-Symulacja bilardu napisana w języku **Python** z wykorzystaniem biblioteki **Pygame**. Projekt został przygotowany w ramach zajęć z fizyki i demonstruje zastosowanie mechaniki klasycznej oraz metod numerycznych do modelowania ruchu ciał.
+Symulacja bilardu napisana w języku **Python** z wykorzystaniem biblioteki **Pygame**.
 
 Głównym celem projektu jest jakościowa prezentacja **efektu motyla** (czułości na warunki początkowe) w układzie bilardowym.
 
@@ -121,5 +121,3 @@ Model stanowi uproszczenie rzeczywistej gry w bilard i nie uwzględnia:
 ## Autor
 
 **Antoni Mosiołek**
-
-Projekt wykonany w ramach zajęć z fizyki jako symulacja zachowań bil i ich wrażliwośći na warunki początkowe.
