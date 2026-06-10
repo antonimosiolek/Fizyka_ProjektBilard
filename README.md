@@ -36,8 +36,8 @@ Przyjęto następujące założenia:
 
 Program uruchamia równocześnie dwa niemal identyczne układy:
 
-* **Układ A** -- ruch początkowy bez zaburzenia,
-* **Układ B** -- ruch początkowy z niewielką zmianą kąta uderzenia.
+* **Układ A** - ruch początkowy bez zaburzenia,
+* **Układ B** - ruch początkowy z niewielką zmianą kąta uderzenia.
 
 Pomimo minimalnej różnicy parametrów początkowych, po serii zderzeń trajektorie bil mogą znacząco się różnić.
 
