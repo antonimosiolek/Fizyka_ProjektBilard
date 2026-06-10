@@ -78,7 +78,7 @@ class Ball:
         self.traj: list[tuple[float, float]] = []
         self.moving = (vx != 0 or vy != 0)
 
-    # ── Schemat Eulera (semi-niejawny) ───────
+    # ── Schemat Eulera ───────
     def update(self, dt: float):
         speed = math.hypot(self.vx, self.vy)
 
