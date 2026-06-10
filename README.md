@@ -1,1 +1,1 @@
-Symulacja bilardu 2D w Pythonie/pygame — zderzenia sprężyste, tarcie kinetyczne, schemat Eulera. Demonstracja efektu motyla: dwa układy startują z różnicą kąta 0,001 rad, trajektorie rozbiegają się wykładniczo.
+Symulacja bilardu 2D w Pythonie/pygame - zderzenia sprężyste, tarcie kinetyczne, schemat Eulera. Demonstracja efektu motyla: dwa układy startują z różnicą kąta 0,001 rad, trajektorie rozbiegają się wykładniczo.
