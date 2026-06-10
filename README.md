@@ -1,4 +1,4 @@
-# 🎱 Billiard Chaos Simulation
+# 🎱 Symulacja zjawiska chaosu w bilardzie
 
 Symulacja bilardu napisana w języku **Python** z wykorzystaniem biblioteki **Pygame**.
 
